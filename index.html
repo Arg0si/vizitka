@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1C1F24">
+<title>Каунов Никита — ОЦК ГосСОПКА</title>
+<style>
+  :root{
+    --graphite:#1C1F24;
+    --navy:#16253A;
+    --navy-2:#1E3350;
+    --turquoise:#3DD9C5;
+    --white:#F2F7FA;
+    --muted:#98A6B5;
+    --line:rgba(61,217,197,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--graphite)}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color:var(--white); -webkit-font-smoothing:antialiased;
+    display:flex; justify-content:center; min-height:100vh;
+  }
+  .card{width:100%;max-width:520px;padding-bottom:40px}
+
+  /* ---------- Баннер с драконом ---------- */
+  .hero{position:relative;height:300px;overflow:hidden;background:var(--navy)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:62% 50%;display:block}
+  .hero .scrim{position:absolute;inset:0;
+    background:
+      linear-gradient(180deg,rgba(28,31,36,.38) 0%,rgba(28,31,36,0) 32%,
+                            rgba(28,31,36,.48) 74%,var(--graphite) 100%),
+      linear-gradient(90deg,rgba(28,31,36,.58) 0%,rgba(28,31,36,.16) 34%,rgba(28,31,36,0) 60%);
+  }
+  .brand{position:absolute;left:20px;top:18px;z-index:3;
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--white);
+    background:rgba(22,37,58,.74);border:1px solid var(--line);border-radius:999px;
+    padding:7px 13px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .brand i{width:6px;height:6px;border-radius:50%;background:var(--turquoise);display:block}
+
+  /* ---------- Имя и должность ---------- */
+  .ident{position:relative;z-index:3;padding:0 24px;margin-top:-44px}
+  .avatar{width:92px;height:92px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:30px;
+    background:linear-gradient(160deg,var(--navy-2),#14243A);
+    border:1px solid rgba(61,217,197,.32);
+    box-shadow:0 0 0 6px rgba(61,217,197,.07)}
+  h1{margin-top:16px;font-size:29px;line-height:1.15;font-weight:600;letter-spacing:-.01em}
+  .role{margin-top:9px;font-size:15px;line-height:1.55;color:var(--muted)}
+  .role b{display:block;color:var(--white);font-weight:600}
+
+  /* ---------- Кнопки ---------- */
+  .wrap{padding:0 24px}
+  .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+  .quick a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+    height:84px;border-radius:16px;text-decoration:none;
+    background:var(--navy);border:1px solid var(--line);
+    color:var(--white);font-size:12px;transition:border-color .15s,transform .15s}
+  .quick a:active{transform:scale(.97);border-color:var(--turquoise)}
+  .quick svg{width:22px;height:22px;stroke:var(--turquoise);fill:none;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+
+  .save{display:flex;align-items:center;justify-content:center;gap:10px;
+    margin-top:10px;height:60px;border-radius:16px;text-decoration:none;
+    background:var(--navy);color:var(--white);font-weight:600;font-size:15px;
+    border:1px solid rgba(61,217,197,.38)}
+  .save svg{width:19px;height:19px;stroke:var(--turquoise);fill:none;stroke-width:1.9;
+    stroke-linecap:round;stroke-linejoin:round}
+  .save:active{transform:scale(.99)}
+
+  /* ---------- Основные направления ---------- */
+  .rule{height:1px;background:var(--line);margin:32px 0 0}
+  .block{padding-top:24px}
+  .label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--turquoise);margin-bottom:14px}
+  ul{list-style:none}
+  li{display:flex;align-items:flex-start;gap:11px;padding:11px 0;
+    border-bottom:1px solid var(--line);font-size:15px;line-height:1.45;color:var(--white)}
+  li:last-child{border-bottom:0}
+  li svg{flex:0 0 18px;width:18px;height:18px;margin-top:2px;
+    stroke:var(--turquoise);fill:none;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- Контакты ---------- */
+  .contact{display:block;text-decoration:none;color:var(--white);
+    padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .contact:last-child{border-bottom:0}
+  .contact span{display:block;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+
+  .note{margin-top:20px;padding:14px 16px;border-radius:12px;
+    background:rgba(22,37,58,.85);border:1px solid var(--line);
+    font-size:12px;color:var(--muted);line-height:1.6}
+  .note b{color:var(--turquoise)}
+  code{color:var(--turquoise);font-size:12px}
+
+  .foot{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:11px;color:var(--muted);line-height:1.7}
+  .foot b{color:var(--white);font-weight:600;letter-spacing:.1em}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="hero">
+    <img src="dragon.jpg" alt="">
+    <div class="scrim"></div>
+    <div class="brand"><i></i>ОЦК ГосСОПКА</div>
+  </div>
+
+  <div class="ident">
+    <div class="avatar">КНА</div>
+    <h1>Каунов Никита Андреевич</h1>
+    <div class="role">
+      <b>Начальник Центра менеджмента компьютерных инцидентов</b>
+      Отраслевой центр компетенций ОЦК ГосСОПКА
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="quick">
+      <a href="tel:+79166304501">
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Позвонить
+      </a>
+      <a href="mailto:N.Kaunov@cert.nppgamma.ru">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Написать
+      </a>
+      <a href="https://t.me/Arg0si">
+        <svg viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6.1 1.9l4.6 1.5 1.7 5.3c.3.9 1.4 1 1.9.3l2.4-3 4.6 3.4c.7.5 1.7.1 1.9-.8l3-14.1c.2-1-.7-1.8-1.6-1.4z"/><path d="m7.6 14.1 10-6.6-7.4 7.7"/></svg>
+        Telegram
+      </a>
+    </div>
+
+    <a class="save" href="contact.vcf" download>
+      <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M4 21h16"/></svg>
+      Сохранить контакт
+    </a>
+
+    <div class="rule"></div>
+
+    <!-- Только основные направления — без детализации услуг -->
+    <div class="block">
+      <div class="label">Сервисы и услуги ОЦК ГосСОПКА</div>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Круглосуточный мониторинг и реагирование</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v6c0 4.3 3 8 7.5 9 4.5-1 7.5-4.7 7.5-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Уязвимости и анализ защищённости</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v6c0 4.3 3 8 7.5 9 4.5-1 7.5-4.7 7.5-9V6z"/><path d="M12 8v4"/><circle cx="12" cy="15" r=".6" fill="currentColor" stroke="none"/></svg>Киберстраховка</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 3.5 2.5 8.2 12 13l9.5-4.8z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg>Повышение осведомлённости</li>
+      </ul>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="block">
+      <div class="label">Контакты</div>
+      <a class="contact" href="tel:+79166304501"><span>Телефон</span>+7 916 630-45-01</a>
+      <a class="contact" href="mailto:N.Kaunov@cert.nppgamma.ru"><span>Почта</span>N.Kaunov@cert.nppgamma.ru</a>
+      <a class="contact" href="https://example.ru"><span>Сайт</span>example.ru</a>
+    </div>
+
+
+    <div class="foot">
+      <b>ОЦК ГОССОПКА</b><br>
+      Отраслевой центр компетенций. Профессиональная экспертиза в области кибербезопасности и промышленных угроз.
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

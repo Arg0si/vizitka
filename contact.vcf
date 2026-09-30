@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Фамилия;Имя;;;
+FN:Имя Фамилия
+ORG:ОЦК ГосСОПКА
+TITLE:Руководитель
+TEL;TYPE=CELL,VOICE:+70000000000
+EMAIL;TYPE=WORK:name@example.ru
+URL:https://example.ru
+X-SOCIALPROFILE;TYPE=telegram:https://t.me/username
+NOTE:Отраслевой центр компетенций. Мониторинг киберугроз и управление компьютерными инцидентами.
+END:VCARD
