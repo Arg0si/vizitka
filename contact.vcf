@@ -1,11 +1,11 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Фамилия;Имя;;;
-FN:Имя Фамилия
+N:Каунов;Никита;;;
+FN:Каунов Никита
 ORG:ОЦК ГосСОПКА
-TITLE:Руководитель
-TEL;TYPE=CELL,VOICE:+70000000000
-EMAIL;TYPE=WORK:name@example.ru
+TITLE:Начальник центра менеджмента компьютерных инцидентов
+TEL;TYPE=CELL,VOICE:+79166304501
+EMAIL;TYPE=WORK:N.Kaunov@gmail.com
 URL:https://example.ru
 X-SOCIALPROFILE;TYPE=telegram:https://t.me/username
 NOTE:Отраслевой центр компетенций. Мониторинг киберугроз и управление компьютерными инцидентами.
